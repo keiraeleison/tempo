@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from '../../styles/Templates.module.css'
+import Link from "next/link";
 
 // fetches data in build time!
 export const getStaticProps = async () => {
@@ -21,11 +22,11 @@ const Templates = ({ templates }) => {
             <div>
                 <h1>All Templates</h1>
                 {templates.map(template => (
-                    <div key={template.id}>
+                    <Link legacyBehavior key={template.id} href={ '/templates/' + template.id } >
                         <a className={styles.single}>
                             <h3>{template.name}</h3>
                         </a>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </>
