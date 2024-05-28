@@ -9,14 +9,28 @@ export const getStaticPaths = async () => {
     })
 
     return {
-        paths: paths
+        paths, // paths: paths
+        fallback: false
     }
 }
 
-const Details = () => {
+export const getStaticProps = async (context) => {
+    const id = context.params.id;
+    const res = await fetch('https://jsonplaceholder.typicode.com/users/' + id);
+    const data = await res.json();
+
+    return {
+        props: { template: data}
+    }
+}
+
+const Details = ({ template }) => {
     return ( 
         <div>
-            <h1>Details</h1>
+            <h1>{ template.name }</h1>
+            <p>{ template.email }</p>
+            <p>{ template.website }</p>
+            <p>{ template.address.city }</p>
         </div>
      );
 }
