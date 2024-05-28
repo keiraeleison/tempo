@@ -9,12 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div>
-      <h1>Meet Tempo</h1>
-      <p>An Obsidian template collection. By the community, for the community</p>
+      <h1 className={styles.title}>Homepage</h1>
 
-      <p>I've been on the lookout for templates for my ever-growing Obsidian vault for years. After all those long hours of being through abandoned Github repositories, long community threads and deprecated/broken scripts, listening to hours of videos on Youtube, I have decided to create the space where the Obsidian community could find all of these at one place, without that exhausting hunt.</p>
+      <p className={styles.text}>Anim laborum ullamco aliquip nostrud in ea reprehenderit. Ea ex est do laboris Lorem elit sunt enim est cillum quis est do nostrud. Aute duis amet esse eu qui laboris excepteur. Veniam sunt et sit excepteur voluptate est exercitation.</p>
+      <p className={styles.text}>Adipisicing culpa tempor deserunt eu aute incididunt. Veniam cillum ullamco commodo pariatur nostrud excepteur officia proident anim. Dolor id qui quis ut ad nostrud culpa in duis qui non. Et nostrud eu aute consectetur fugiat ut consectetur Lorem consequat et exercitation. Ullamco ad tempor deserunt consectetur quis sunt dolore consectetur qui sint irure. Reprehenderit nostrud laboris in laborum id incididunt minim amet laborum est id.</p>
 
-      <p>Let me know if you are a Creator <Link href="/">HERE</Link><br /> or if you are simply on the lookout for the latest scripts and templates for your vault <Link href="/">HERE</Link></p>
+      <Link legacyBehavior href="/templates"><a className={styles.btn}>Templates</a></Link>
     </div>
   );
 }
